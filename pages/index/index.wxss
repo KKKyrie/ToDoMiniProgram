@@ -65,6 +65,6 @@
 }
 
 .loading-pic {
-  width: 100rpx;
-  height: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
 }
