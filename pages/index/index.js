@@ -17,6 +17,9 @@ Page({
 
 	onLoad: function() {
 		this.initUserInfo();
+	},
+
+	onShow: function(){
 		this.turnOffLoading();
 	},
 
