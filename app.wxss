@@ -75,4 +75,7 @@
 .mt200 {
 	margin-top: 200rpx;
 }
+.ptb300{
+	padding: 300rpx 0;
+}
 /*layout end*/

@@ -7,13 +7,40 @@ Page({
 		motto: 'developing...',
 		userInfo: {},
 		hasUserInfo: false,
-		canIUse: wx.canIUse('button.open-type.getUserInfo')
+		canIUse: wx.canIUse('button.open-type.getUserInfo'),
+		initLoading: true
 	},
 	//事件处理函数
 	bindViewTap: function() {
 		console.log('tap avatar');
 	},
+
 	onLoad: function() {
+		this.initUserInfo();
+		this.turnOffLoading();
+	},
+
+	// 按钮事件 获取用户数据
+	getUserInfo: function(e) {
+		app.globalData.userInfo = e.detail.userInfo
+		this.setData({
+			userInfo: e.detail.userInfo,
+			hasUserInfo: true
+		})
+	},
+
+	// 关闭小程序loading动画
+	turnOffLoading: function(){
+		
+		setTimeout(() => {
+			this.setData({
+				initLoading: false
+			})
+		}, 1500)
+	},
+
+	// 初始化用户数据
+	initUserInfo: function(){
 		if (app.globalData.userInfo) {
 			this.setData({
 				userInfo: app.globalData.userInfo,
@@ -40,12 +67,12 @@ Page({
 				}
 			})
 		}
-	},
-	getUserInfo: function(e) {
-		app.globalData.userInfo = e.detail.userInfo
-		this.setData({
-			userInfo: e.detail.userInfo,
-			hasUserInfo: true
-		})
 	}
 })
+
+
+
+
+
+
+
