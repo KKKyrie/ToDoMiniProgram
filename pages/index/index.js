@@ -19,8 +19,17 @@ Page({
 		this.initUserInfo();
 	},
 
-	onShow: function(){
+	onShow: function() {
 		this.turnOffLoading();
+	},
+
+	// 下拉刷新
+	onPullDownRefresh: function() {
+		// 重新获取页面数据
+		setTimeout(() => {
+			wx.stopPullDownRefresh();
+		}, 1500);
+
 	},
 
 	// 按钮事件 获取用户数据
@@ -33,8 +42,8 @@ Page({
 	},
 
 	// 关闭小程序loading动画
-	turnOffLoading: function(){
-		
+	turnOffLoading: function() {
+
 		setTimeout(() => {
 			this.setData({
 				initLoading: false
@@ -43,7 +52,7 @@ Page({
 	},
 
 	// 初始化用户数据
-	initUserInfo: function(){
+	initUserInfo: function() {
 		if (app.globalData.userInfo) {
 			this.setData({
 				userInfo: app.globalData.userInfo,
@@ -70,12 +79,22 @@ Page({
 				}
 			})
 		}
+	},
+
+
+	// 去添加页面
+	goAddPage: function() {
+		wx.showModal({
+			title: '友情提醒',
+			content: '添加事项的页面还没做呢，别点了',
+			showCancel: false,
+			confirmText: '哦',
+			confirmColor: '#5cbaea',
+			success: res => {
+				if (res.confirm) {
+					return;
+				}
+			}
+		});
 	}
 })
-
-
-
-
-
-
-

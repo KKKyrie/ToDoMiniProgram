@@ -9,12 +9,19 @@
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
+  margin: 50rpx 30rpx 50rpx 50rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #1e1e1e;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.userinfo-sentence {
+  color: #aaaaaa;
+  font-size: 25rpx;
 }
 
 .usermotto {
@@ -67,4 +74,22 @@
 .loading-pic {
   width: 120rpx;
   height: 120rpx;
+}
+
+.index-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  background-color: #ffffff;
+  box-shadow: 0 5rpx 20rpx #c9c9c9;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }

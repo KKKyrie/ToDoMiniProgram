@@ -1,4 +1,7 @@
 /**app.wxss**/
+page {
+  background-color: #f2f2f2;
+}
 .container {
   height: 100%;
   display: flex;
@@ -22,7 +25,9 @@
 .white {
 	color: #ffffff;
 }
-
+.white-bg {
+	background-color: #ffffff;
+}
 .yellow-bg {
 	background-color: #ffc44f;
 }
@@ -40,12 +45,14 @@
 
 .fixed-bottom{
 	position: fixed;
-	bottom: 30rpx;
+	bottom: 0rpx;
+	box-shadow: 0 -5rpx 20rpx #c9c9c9;
 }
 
 .block-full-width{
 	display: block;
 	width: 100%;
+	height: 150rpx;
 }
 
 .flex-container {

@@ -1,13 +1,15 @@
 <!--index.wxml-->
-<view class="container">
+<view>
 
   <!-- launch init animation begin -->
   <block wx:if="{{initLoading}}">
-    <view class="userinfo ptb300">
-      <view class='bouncing-loader'>
-        <view></view>
-        <view></view>
-        <view></view>
+    <view class="container">
+      <view class="userinfo ptb300">
+        <view class='bouncing-loader'>
+          <view></view>
+          <view></view>
+          <view></view>
+        </view>
       </view>
     </view>
   </block>
@@ -26,26 +28,33 @@
         <image src="../../images/index/loading.gif" mode="aspectFit" class="loading-pic"></image>
       </view>
     </view>
+
     
     <!-- has user info -->
+    <!-- main view -->
     <view wx:else class="userinfo">
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <view class="index-header">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+          
+          <view class="title-container">
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <text class="userinfo-sentence">今天事情做完了吗？</text>
+            <text class="userinfo-sentence">没有。</text>
+          </view>
+        </view>
     </view>
 
-  <!-- <view class="usermotto">
-  <text class="user-motto">{{motto}}</text>
-  </view> -->
+
 
     <!-- bottom button -->
-    <view class="fixed-bottom block-full-width flex-container">
+    <view class="fixed-bottom block-full-width flex-container white-bg">
       
       <block wx:if="{{!hasUserInfo && canIUse}}">
         <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="light-blue-bg white full-button" hover-class="light-blue-hover"> 确认授权使用 </button>
       </block>
 
       <block wx:else>
-        <button class="light-blue-bg white full-button" hover-class="light-blue-hover"> 添加待办事项 </button>
+        <button class="light-blue-bg white full-button" hover-class="light-blue-hover" bindtap="goAddPage"> 添加待办事项 </button>
       </block>
     </view>
   </block>
