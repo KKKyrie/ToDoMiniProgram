@@ -39,9 +39,14 @@
           <view class="title-container">
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
             <text class="userinfo-sentence">今天事情做完了吗？</text>
-            <text class="userinfo-sentence">没有。</text>
+            <text class="userinfo-sentence">{{titleWording}}。</text>
           </view>
         </view>
+
+
+        <wxs src="./getToDoListLength.wxs" module="getToDoListLength"></wxs>
+        <view>{{getToDoListLength.count(todoList)}}</view>
+        <view>{{todoList.length}}</view>
     </view>
 
 

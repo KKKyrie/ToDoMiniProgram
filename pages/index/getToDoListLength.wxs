@@ -1,0 +1,14 @@
+// 获取待办事项列表的长度
+
+/*
+ * params: Array Object
+ * return number
+*/
+var count = function(arr) {
+	return arr.length;
+};
+
+
+module.exports = {
+	count: count
+};

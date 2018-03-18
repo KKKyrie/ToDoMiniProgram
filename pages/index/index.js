@@ -4,11 +4,12 @@ const app = getApp()
 
 Page({
 	data: {
-		motto: 'developing...',
+		titleWording: '没有',
 		userInfo: {},
 		hasUserInfo: false,
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
-		initLoading: true
+		initLoading: true,
+		todoList: [1,2,3]
 	},
 	//事件处理函数
 	bindViewTap: function() {
