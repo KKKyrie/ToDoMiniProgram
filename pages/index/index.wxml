@@ -44,8 +44,8 @@
         </view>
 
 
-        <wxs src="../../wxs/index/getToDoListLength.wxs" module="getToDoListLength"></wxs>
-        <view>{{getToDoListLength.count(todoList)}}</view>
+        <!-- <wxs src="../../wxs/index/getToDoListLength.wxs" module="getToDoListLength"></wxs> -->
+        <!-- <view>{{getToDoListLength.count(todoList)}}</view> -->
         <!-- <view>{{todoList.length}}</view> -->
     </view>
 
