@@ -9,7 +9,23 @@ Page({
 		hasUserInfo: false,
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 		initLoading: true,
-		todoList: [1,2,3]
+		showDoneList: false,
+		todoList: [{
+			key: 'key_0',
+			todo: 'mock_0未完成',
+			isDone: false,
+			remark: '展示未完成'
+		},{
+			key: 'key_1',
+			todo: 'mock_1未完成',
+			isDone: false,
+			remark: '展示未完成'
+		},{
+			key: 'key_2',
+			todo: 'mock_2 已完成',
+			isDone: true,
+			remark: '展示已完成'
+		}]
 	},
 	//事件处理函数
 	bindViewTap: function() {
@@ -96,6 +112,21 @@ Page({
 					return;
 				}
 			}
+		});
+	},
+
+
+	// 展示未完成列表
+	switchUndoneList: function(){
+		this.setData({
+			showDoneList: false
+		});
+	},
+
+	// 展示完成列表
+	switchDoneList: function(){
+		this.setData({
+			showDoneList: true
 		});
 	}
 })

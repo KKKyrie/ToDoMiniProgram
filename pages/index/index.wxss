@@ -1,6 +1,6 @@
 
 /**index.wxss**/
-.userinfo {
+.todo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,4 +92,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+.switch-container {
+  display: flex;
+  width: 61.8%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.switch-container > view {
+  font-weight: bold;
+  color: #1e1e1e;
+}
+
+.current-tab {
+  color: #5cbaea !important;
 }

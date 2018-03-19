@@ -76,6 +76,15 @@ page {
 .mt20 {
 	margin-top: 20rpx;
 }
+
+.mt30 {
+	margin-top: 30rpx;
+}
+
+.mt50 {
+	margin-top: 50rpx;
+}
+
 .mt10 {
 	margin-top: 10rpx;
 }

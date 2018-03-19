@@ -32,7 +32,7 @@
     
     <!-- has user info -->
     <!-- main view -->
-    <view wx:else class="userinfo">
+    <view wx:else class="todo-container">
         <view class="index-header">
           <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
           
@@ -43,10 +43,28 @@
           </view>
         </view>
 
+        <!-- 切换列表按钮 -->
+        <view class="switch-container mt30">
+          <view bindtap="switchUndoneList" class="{{showDoneList ? '' : 'current-tab'}}">未完成</view>
+          <view bindtap="switchDoneList" class="{{showDoneList ? 'current-tab' : ''}}">已完成</view>
+        </view>
+  
 
-        <!-- <wxs src="../../wxs/index/getToDoListLength.wxs" module="getToDoListLength"></wxs> -->
-        <!-- <view>{{getToDoListLength.count(todoList)}}</view> -->
-        <!-- <view>{{todoList.length}}</view> -->
+        <view class="mt20">
+          <!-- getUndoneList -->
+          <wxs src="../../wxs/index/getUndoneList.wxs" module="getUndoneList"></wxs>
+          <view wx:if="{{!showDoneList}}">
+            <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key">{{item.todo}} + {{item.remark}}</view>
+          </view>
+          
+
+          <!-- getDoneList -->
+          <wxs src="../../wxs/index/getDoneList.wxs" module="getDoneList"></wxs>
+          <view wx:else>
+            <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key">{{item.todo}} + {{item.remark}}</view>
+          </view>
+        </view>
+
     </view>
 
 
