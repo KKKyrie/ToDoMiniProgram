@@ -84,7 +84,7 @@
   width: 100%;
   height: 200rpx;
   background-color: #ffffff;
-  box-shadow: 0 5rpx 20rpx #c9c9c9;
+  /*box-shadow: 0 5rpx 20rpx #c9c9c9;*/
 }
 
 .title-container {
@@ -103,9 +103,12 @@
 
 .switch-container > view {
   font-weight: bold;
+  font-size: 40rpx;
   color: #1e1e1e;
+  padding-bottom: 10rpx;
 }
 
 .current-tab {
   color: #5cbaea !important;
+  border-bottom: 2px solid #5cbaea;
 }
