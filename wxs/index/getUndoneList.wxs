@@ -1,10 +1,9 @@
-
 /*
  * 过滤函数 检查传入的项目的 isDone 字段是否为 false
  * params: Object
- * return Boolean
+ * return: Boolean
  */
-var filterUndone = function(item){
+var filterUndone = function(item) {
 	return !item.isDone;
 };
 
@@ -12,13 +11,25 @@ var filterUndone = function(item){
 /*
  * 获取还没做的项目
  * params: Array
- * return Array
+ * return: Array
  */
 var getUndoneList = function(arr) {
 	return arr.filter(filterUndone);
 };
 
 
+/*
+ * 获取还没做的项目的个数
+ * params: Array
+ * return: Number
+ */
+var getLength = function(arr) {
+	var list = arr.filter(filterUndone);
+	return list.length;
+}
+
+
 module.exports = {
-	getList: getUndoneList
+	getList: getUndoneList,
+	getLength: getLength
 };

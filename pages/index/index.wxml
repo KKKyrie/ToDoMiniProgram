@@ -56,18 +56,28 @@
           <!-- getUndoneList -->
           <wxs src="../../wxs/index/getUndoneList.wxs" module="getUndoneList"></wxs>
           <view wx:if="{{!showDoneList}}">
-            <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" bindtap="navigateToDetail">
-              <text>{{item.todo}}</text>
-            </view>
+
+            <block wx:if="{{getUndoneList.getLength(todoList) > 0}}">
+              <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" bindtap="navigateToDetail">
+                <text>{{item.todo}}</text>
+              </view>
+            </block>
+
+            <block wx:else>空空如也</block>
           </view>
           
 
           <!-- getDoneList -->
           <wxs src="../../wxs/index/getDoneList.wxs" module="getDoneList"></wxs>
           <view wx:else>
-            <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30">
-              <text>{{item.todo}}</text>
-            </view>
+
+            <block wx:if="{{getDoneList.getLength(todoList) > 0}}">
+              <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30">
+                <text>{{item.todo}}</text>
+              </view>
+            </block>
+            
+            <block wx:else>空空如也</block>
           </view>
 
         </view>
