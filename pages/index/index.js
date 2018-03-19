@@ -141,17 +141,8 @@ Page({
 
 	// 去添加页面
 	goAddPage: function() {
-		wx.showModal({
-			title: '友情提醒',
-			content: '添加事项的页面还没做呢，别点了',
-			showCancel: false,
-			confirmText: '哦',
-			confirmColor: '#5cbaea',
-			success: res => {
-				if (res.confirm) {
-					return;
-				}
-			}
+		wx.navigateTo({
+			url: '../addItem/addItem'
 		});
 	},
 
