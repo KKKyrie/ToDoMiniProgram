@@ -43,6 +43,12 @@ page {
 	border: 1rpx solid black;
 }
 
+.fixed-top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
 .fixed-bottom{
 	position: fixed;
 	bottom: 0rpx;
@@ -93,5 +99,11 @@ page {
 }
 .ptb300{
 	padding: 300rpx 0;
+}
+.mb20 {
+	margin-bottom: 20rpx;
+}
+.mb30 {
+	margin-bottom: 30rpx;
 }
 /*layout end*/

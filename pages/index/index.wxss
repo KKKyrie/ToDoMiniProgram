@@ -110,5 +110,32 @@
 
 .current-tab {
   color: #5cbaea !important;
-  border-bottom: 2px solid #5cbaea;
+  border-bottom: 2rpx solid #5cbaea;
+}
+
+.todo-list {
+  /*border: 1rpx solid black;*/
+  width: 80%;
+}
+
+.todo-item {
+  border: 1rpx solid gray;
+  /*box-shadow: 0 0 20rpx red;*/
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  padding: 30rpx 25rpx;
+  text-align: justify;
+}
+
+.todo-item:last-child {
+  margin-bottom: 180rpx;
+}
+
+.todo-item:active {
+  transform: scale(0.98,0.98);
+  transition: all 1 ease 0;
+}
+
+.todo-item > text {
+  font-size: 35rpx;
 }
