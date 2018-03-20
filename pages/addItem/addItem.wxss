@@ -10,6 +10,7 @@
 
 .input-container > input {
 	font-size: 40rpx;
+	display: inline-block;
 }
 
 .remark-area {
@@ -22,4 +23,12 @@
 	/*border: 1px solid red;*/
 	width: auto;
 	text-align: justify;
+}
+
+.input-icon {
+	/*border: 1px solid black;*/
+	display: inline-block;
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 8rpx;
 }

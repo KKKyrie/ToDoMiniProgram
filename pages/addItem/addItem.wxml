@@ -4,6 +4,8 @@
 
 	<view class="input-container white-bg">
 		
+		<image src="../../images/addItem/accessory.png" mode="aspectFit" class="input-icon"></image>
+
 		<!-- todo -->
 		<input placeholder="添加事项..." type="text" class="white-bg" maxlength="50" value="{{todo}}"></input>
 
