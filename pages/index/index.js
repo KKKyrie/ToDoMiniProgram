@@ -27,10 +27,6 @@ Page({
 			remark: '展示已完成'
 		}]
 	},
-	//事件处理函数
-	bindViewTap: function() {
-		console.log('tap avatar');
-	},
 
 	onLoad: function() {
 		this.initUserInfo();
