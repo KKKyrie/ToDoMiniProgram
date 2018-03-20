@@ -1,0 +1,25 @@
+.input-container {
+	border: 1px solid #dcdcdc;
+	border-radius: 20rpx;
+	display: block;
+	padding: 30rpx 30rpx;
+	margin: 50rpx 30rpx;
+
+	color: #1e1e1e;
+}
+
+.input-container > input {
+	font-size: 40rpx;
+}
+
+.remark-area {
+	border-top: 1px solid #dcdcdc;
+	margin-top: 30rpx;
+	padding: 30rpx 0;
+
+	font-size: 30rpx;
+
+	/*border: 1px solid red;*/
+	width: auto;
+	text-align: justify;
+}

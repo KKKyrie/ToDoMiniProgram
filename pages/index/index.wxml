@@ -17,7 +17,7 @@
 
   <block wx:else>
     <!-- no user info -->
-    <view wx:if="{{!hasUserInfo && canIUse}}" class="userinfo mt200">    
+    <view wx:if="{{!hasUserInfo && canIUse}}" class="todo-container mt200">    
       <view class="auth-banner">
         <text>为了更好的使用「事情做完了吗」，需要你授权小程序以下个人信息：</text>
         <text class="mt20">⒈ 微信昵称</text>
@@ -44,25 +44,42 @@
         </view>
 
         <!-- 切换列表按钮 -->
-        <view class="switch-container mt30">
+        <view class="switch-container mt30 mb20">
           <view bindtap="switchUndoneList" class="{{showDoneList ? '' : 'current-tab'}}">未完成</view>
           <view bindtap="switchDoneList" class="{{showDoneList ? 'current-tab' : ''}}">已完成</view>
         </view>
-  
+        
 
-        <view class="mt20">
+        <!-- 待办事项列表区域 -->
+        <view class="mt20 todo-list">
+
           <!-- getUndoneList -->
           <wxs src="../../wxs/index/getUndoneList.wxs" module="getUndoneList"></wxs>
           <view wx:if="{{!showDoneList}}">
-            <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key">{{item.todo}} + {{item.remark}}</view>
+
+            <block wx:if="{{getUndoneList.getLength(todoList) > 0}}">
+              <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" bindtap="navigateToDetail">
+                <text>{{item.todo}}</text>
+              </view>
+            </block>
+
+            <block wx:else>空空如也</block>
           </view>
           
 
           <!-- getDoneList -->
           <wxs src="../../wxs/index/getDoneList.wxs" module="getDoneList"></wxs>
           <view wx:else>
-            <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key">{{item.todo}} + {{item.remark}}</view>
+
+            <block wx:if="{{getDoneList.getLength(todoList) > 0}}">
+              <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30">
+                <text>{{item.todo}}</text>
+              </view>
+            </block>
+            
+            <block wx:else>空空如也</block>
           </view>
+
         </view>
 
     </view>

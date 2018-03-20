@@ -12,19 +12,59 @@ Page({
 		showDoneList: false,
 		todoList: [{
 			key: 'key_0',
-			todo: 'mock_0未完成',
+			todo: '一二三四一二三四一二三四十二个字然后呢居然直接换行了',
 			isDone: false,
 			remark: '展示未完成'
-		},{
+		}, {
 			key: 'key_1',
 			todo: 'mock_1未完成',
 			isDone: false,
 			remark: '展示未完成'
-		},{
+		}, {
 			key: 'key_2',
 			todo: 'mock_2 已完成',
 			isDone: true,
 			remark: '展示已完成'
+		}, {
+			key: 'key_3',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_4',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_5',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_6',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_7',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_8',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_9',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
+		}, {
+			key: 'key_10',
+			todo: 'mock_1未完成',
+			isDone: true,
+			remark: '展示未完成'
 		}]
 	},
 
@@ -97,11 +137,19 @@ Page({
 
 	// 去添加页面
 	goAddPage: function() {
+		wx.navigateTo({
+			url: '../addItem/addItem'
+		});
+	},
+
+
+	// todo详情页
+	navigateToDetail: function() {
 		wx.showModal({
 			title: '友情提醒',
-			content: '添加事项的页面还没做呢，别点了',
+			content: '事项的详情页面还没做呢，别点了',
 			showCancel: false,
-			confirmText: '哦',
+			confirmText: '哦!',
 			confirmColor: '#5cbaea',
 			success: res => {
 				if (res.confirm) {
@@ -113,14 +161,14 @@ Page({
 
 
 	// 展示未完成列表
-	switchUndoneList: function(){
+	switchUndoneList: function() {
 		this.setData({
 			showDoneList: false
 		});
 	},
 
 	// 展示完成列表
-	switchDoneList: function(){
+	switchDoneList: function() {
 		this.setData({
 			showDoneList: true
 		});
