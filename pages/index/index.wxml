@@ -39,7 +39,9 @@
           <view class="title-container">
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
             <text class="userinfo-sentence">今天事情做完了吗？</text>
-            <text class="userinfo-sentence">{{titleWording}}。</text>
+
+            <wxs src="../../wxs/index/topWording.wxs" module="topWording"></wxs>
+            <text class="userinfo-sentence">{{topWording.getWording(todoList)}}</text>
           </view>
         </view>
 
@@ -61,6 +63,11 @@
               <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" bindtap="navigateToDetail">
                 <text>{{item.todo}}</text>
               </view>
+              
+              <wxs src="../../wxs/index/bottomWording.wxs" module="bottomWording"></wxs>
+              <view class="bottom-motto">
+                <text>———— {{bottomWording.getUndoneWording(todoList)}} ————</text>
+              </view>
             </block>
 
             <block wx:else>
@@ -78,6 +85,11 @@
             <block wx:if="{{getDoneList.getLength(todoList) > 0}}">
               <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30">
                 <text>{{item.todo}}</text>
+              </view>
+
+              <wxs src="../../wxs/index/bottomWording.wxs" module="bottomWording"></wxs>
+              <view class="bottom-motto">
+                <text>———— {{bottomWording.getDoneWording(todoList)}} ————</text>
               </view>
             </block>
             

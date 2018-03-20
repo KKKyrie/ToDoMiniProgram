@@ -1,0 +1,23 @@
+/*
+ * 根据传入的待办事项数组 决定头部文案 “没有” or “做完了”
+ * params：Array
+ * return：String
+ */
+
+
+var checkDone = function(item) {
+	return item.isDone;
+}
+
+
+var getWording = function(arr) {
+	if (arr.every(checkDone)) {
+		return '做完了。';
+	} else {
+		return '没有。';
+	}
+};
+
+module.exports = {
+	getWording: getWording
+};

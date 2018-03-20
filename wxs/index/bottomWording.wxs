@@ -1,0 +1,75 @@
+/*
+ * 根据列表的长度 生成底部的文案
+ *
+ */
+
+var bottomWording = '明日复明日';
+
+
+// 未完成列表的底部文案
+var getUndoneWording = function(arr) {
+	var _undoneList = arr.filter(function(item){
+		return !item.isDone;
+	});
+	var _length = _undoneList.length;
+	var _wording = '';
+	switch (_length) {
+		case 1:
+			_wording = '一个';
+			break;
+		case 2:
+			_wording = '两个';
+			break;
+		case 3:
+			_wording = '三个';
+			break;
+		case 4:
+			_wording = '四个';
+			break;
+		case 5:
+			_wording = '五个';
+			break;
+		default:
+			_wording = '？？？';
+	}
+	return _wording;
+
+};
+
+
+// 已完成列表的底部文案
+var getDoneWording = function(arr) {
+	var _undoneList = arr.filter(function(item){
+		return item.isDone;
+	});
+	var _length = _undoneList.length;
+	var _wording = '';
+	var _lolWording = [
+		'',
+		'First Blood',
+		'Double Kill',
+		'Triple Kill',
+		'Quadra Kill',
+		'Penta Kill',
+		'Killing Spree',
+		'Rampage',
+		'Unstoppable',
+		'Godlike',
+		'Lengendary'
+	];
+	if (_length <= 10) {
+		_wording = _lolWording[_length];
+	} else if (_length <= 20) {
+		_wording = '拖延症快痊愈了！';
+	} else if (_length <= 30) {
+		_wording = '执行力Max';
+	}
+	return _wording;
+};
+
+
+module.exports = {
+	wording: bottomWording,
+	getUndoneWording: getUndoneWording,
+	getDoneWording: getDoneWording
+};

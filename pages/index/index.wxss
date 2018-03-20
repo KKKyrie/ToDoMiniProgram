@@ -155,3 +155,16 @@
   font-size: 25rpx;
   color: #cdcdcd;
 }
+
+.bottom-motto {
+  /*border: 1px solid black;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-motto > text {
+  color: #bfbfbf;
+  font-size: 30rpx;
+}
