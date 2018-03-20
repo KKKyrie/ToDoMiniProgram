@@ -7,10 +7,10 @@
 		<image src="../../images/addItem/accessory.png" mode="aspectFit" class="input-icon"></image>
 
 		<!-- todo -->
-		<input placeholder="添加事项..." type="text" class="white-bg" maxlength="50" value="{{todo}}"></input>
+		<input placeholder="添加事项..." type="text" class="white-bg" maxlength="50" value="{{todo}}" bindinput="inputTodo"></input>
 
 		<!-- remark -->
-		<textarea class="remark-area" placeholder="备注（选填），比如：完成事情的思路方法 / 给自己加油打气的鸡汤 / 如果没有完成，我就..." maxlength="200" value="{{remark}}"></textarea>
+		<textarea class="remark-area" placeholder="备注（选填），比如：完成事情的思路方法 / 给自己加油打气的鸡汤 / 如果没有完成，我就..." maxlength="200" value="{{remark}}" bindinput="inputRemark"></textarea>
 
 	</view>
 	
@@ -18,7 +18,7 @@
 
 	<!-- button -->
 	<view class="fixed-bottom block-full-width flex-container white-bg">
-		<button class="light-blue-bg white full-button" hover-class="light-blue-hover" bindtap=""> 添加 </button>
+		<button class="light-blue-bg white full-button" hover-class="light-blue-hover" bindtap="addButtonTap"> 添加 </button>
 	</view>
 
 </view>
