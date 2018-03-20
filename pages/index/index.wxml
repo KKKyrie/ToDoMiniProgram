@@ -63,7 +63,11 @@
               </view>
             </block>
 
-            <block wx:else>空空如也</block>
+            <block wx:else>
+              <view class="placeholder-container">
+                <image src="../../images/index/todoEmpty.png" mode="aspectFit" class="loading-pic"></image>
+              </view>
+            </block>
           </view>
           
 
@@ -77,7 +81,12 @@
               </view>
             </block>
             
-            <block wx:else>空空如也</block>
+            <block wx:else>
+              <view class="placeholder-container">
+                <image src="../../images/index/completeEmpty.png" mode="aspectFit" class="loading-pic"></image>
+                <text class="placeholder-wording">空空如也</text>
+              </view>
+            </block>
           </view>
 
         </view>

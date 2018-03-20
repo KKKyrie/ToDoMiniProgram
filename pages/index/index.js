@@ -13,55 +13,10 @@ Page({
 		todoList: [{
 			key: 'key_0',
 			todo: '一二三四一二三四一二三四十二个字然后呢居然直接换行了',
-			isDone: false,
+			isDone: true,
 			remark: '展示未完成'
 		}, {
 			key: 'key_1',
-			todo: 'mock_1未完成',
-			isDone: false,
-			remark: '展示未完成'
-		}, {
-			key: 'key_2',
-			todo: 'mock_2 已完成',
-			isDone: true,
-			remark: '展示已完成'
-		}, {
-			key: 'key_3',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_4',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_5',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_6',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_7',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_8',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_9',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}, {
-			key: 'key_10',
 			todo: 'mock_1未完成',
 			isDone: true,
 			remark: '展示未完成'

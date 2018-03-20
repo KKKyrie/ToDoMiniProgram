@@ -139,3 +139,19 @@
 .todo-item > text {
   font-size: 35rpx;
 }
+
+.placeholder-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 180rpx;
+  /*border: 1px solid black;*/
+}
+
+.placeholder-wording {
+  display: inline-block;
+  margin-top: 25rpx;
+  font-size: 25rpx;
+  color: #cdcdcd;
+}
