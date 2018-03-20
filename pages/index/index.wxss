@@ -127,9 +127,9 @@
   text-align: justify;
 }
 
-.todo-item:last-child {
+/*.todo-item:last-child {
   margin-bottom: 180rpx;
-}
+}*/
 
 .todo-item:active {
   transform: scale(0.98,0.98);
@@ -167,4 +167,5 @@
 .bottom-motto > text {
   color: #bfbfbf;
   font-size: 30rpx;
+  margin-bottom: 180rpx;
 }
