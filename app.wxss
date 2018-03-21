@@ -52,6 +52,7 @@ page {
 .fixed-bottom{
 	position: fixed;
 	bottom: 0rpx;
+	left: 0rpx;
 	box-shadow: 0 -5rpx 20rpx #c9c9c9;
 }
 
@@ -111,3 +112,12 @@ page {
 	padding-right: 30rpx;
 }
 /*layout end*/
+
+
+/* 修正 text 组件 英文&符号不换行的问题  begin */
+text {
+	word-wrap: break-all;
+	word-break: break-word;
+	text-align: justify;
+}
+/* 修正 text 组件 英文&符号不换行的问题  end */

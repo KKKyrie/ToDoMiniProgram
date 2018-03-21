@@ -1,7 +1,17 @@
 
-<view>
-	<view>{{todo}}</view>
-	<view>{{remark}}</view>
+<view class="note-container">
+	
+	<view class="note">
+		<view class="note-todo">
+			<text>bchdsbcscndiuidajdknalcnsdcbnauewjfnjcnsdmnaclhuiedhu</text>
+		</view>
+		<view class="divider"></view>
+		<scroll-view class="note-remark" scroll-y>
+			<text>劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里</text>
+		</scroll-view>
+		<view class="divider"></view>
+	</view>
+	
 
 
 	<!-- button -->

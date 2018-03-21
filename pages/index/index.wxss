@@ -124,7 +124,6 @@
   border-radius: 20rpx;
   background-color: #ffffff;
   padding: 30rpx 25rpx;
-  text-align: justify;
 }
 
 /*.todo-item:last-child {
@@ -132,12 +131,17 @@
 }*/
 
 .todo-item:active {
-  transform: scale(0.98,0.98);
+  transform: scale(0.96,0.96);
   transition: all 1 ease 0;
 }
 
 .todo-item > text {
   font-size: 35rpx;
+  text-align: justify;
+  
+  /*解决 text 组件英文&标点不换行问题*/
+  word-wrap: break-all;
+  word-break: break-word;
 }
 
 .placeholder-container {
