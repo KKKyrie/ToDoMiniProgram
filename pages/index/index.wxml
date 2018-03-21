@@ -60,7 +60,7 @@
           <view wx:if="{{!showDoneList}}">
 
             <block wx:if="{{getUndoneList.getLength(todoList) > 0}}">
-              <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" catchtap="navigateToDetail" data-todo="{{item.todo}}" data-remark="{{item.remark}}" data-done="0">
+              <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" catchtap="navigateToDetail" data-todo="{{item.todo}}" data-remark="{{item.remark}}">
                 <text>{{item.todo}}</text>
               </view>
               
@@ -83,7 +83,7 @@
           <view wx:else>
 
             <block wx:if="{{getDoneList.getLength(todoList) > 0}}">
-              <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" data-todo="{{item.todo}}" data-remark="{{item.remark}}" data-done="1" catchtap="navigateToDetail">
+              <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" data-todo="{{item.todo}}" data-remark="{{item.remark}}" catchtap="navigateToDoneDetail">
                 <text>{{item.todo}}</text>
               </view>
 

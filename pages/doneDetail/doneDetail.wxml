@@ -1,0 +1,10 @@
+<view>
+	<view>{{todo}}</view>
+	<view>{{remark}}</view>
+
+
+	<!-- button -->
+	<view class="fixed-bottom block-full-width flex-container white-bg">
+		<button class="light-blue-bg white full-button" hover-class="light-blue-hover" catchtap=""> 删除 </button>
+	</view>
+</view>

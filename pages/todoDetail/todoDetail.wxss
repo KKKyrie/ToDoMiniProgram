@@ -1,0 +1,14 @@
+.detail-button {
+	width: 300rpx;
+}
+
+.delete-button {
+	background-color: transparent;
+	color: #5cbaea;
+	border: 1px solid #5cbaea;
+}
+
+.delete-button-hover {
+	color: #5cacea;
+	border: 1px solid #5cacea;
+}

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/addItem/addItem",
-    "pages/itemDetail/itemDetail"
+    "pages/todoDetail/todoDetail",
+    "pages/doneDetail/doneDetail"
   ],
   "window":{
     "backgroundTextStyle":"dark",

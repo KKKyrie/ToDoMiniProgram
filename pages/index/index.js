@@ -102,7 +102,20 @@ Page({
 		let todo = ev.target.dataset.todo;
 		let remark = ev.target.dataset.remark;
 
-		let jumpUrl = '../itemDetail/itemDetail?todo=' + todo + '&remark=' + remark;
+		let jumpUrl = '../todoDetail/todoDetail?todo=' + todo + '&remark=' + remark;
+
+		wx.navigateTo({
+			url: jumpUrl
+		});
+	},
+
+	// 已完成 todo详情页
+	navigateToDoneDetail: function(ev) {
+
+		let todo = ev.target.dataset.todo;
+		let remark = ev.target.dataset.remark;
+
+		let jumpUrl = '../doneDetail/doneDetail?todo=' + todo + '&remark=' + remark;
 
 		wx.navigateTo({
 			url: jumpUrl

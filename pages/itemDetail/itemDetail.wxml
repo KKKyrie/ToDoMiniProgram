@@ -1,4 +1,0 @@
-<view>
-	<view>{{todo}}</view>
-	<view>{{remark}}</view>
-</view>

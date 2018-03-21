@@ -33,6 +33,12 @@
 					"name": "添加项目页面",
 					"pathName": "pages/addItem/addItem",
 					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "详情页面",
+					"pathName": "pages/todoDetail/todoDetail",
+					"query": "todo=kyrieliu&remark=testtestestetsetstes"
 				}
 			]
 		}

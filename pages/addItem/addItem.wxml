@@ -18,7 +18,7 @@
 
 	<!-- button -->
 	<view class="fixed-bottom block-full-width flex-container white-bg">
-		<button class="light-blue-bg white full-button" hover-class="light-blue-hover" bindtap="addButtonTap"> 添加 </button>
+		<button class="light-blue-bg white full-button" hover-class="light-blue-hover" catchtap="addButtonTap"> 添加 </button>
 	</view>
 
 </view>
