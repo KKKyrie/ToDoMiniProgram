@@ -47,8 +47,8 @@
 
         <!-- 切换列表按钮 -->
         <view class="switch-container mt30 mb20">
-          <view bindtap="switchUndoneList" class="{{showDoneList ? '' : 'current-tab'}}">未完成</view>
-          <view bindtap="switchDoneList" class="{{showDoneList ? 'current-tab' : ''}}">已完成</view>
+          <view catchtap="switchUndoneList" class="{{showDoneList ? '' : 'current-tab'}}">未完成</view>
+          <view catchtap="switchDoneList" class="{{showDoneList ? 'current-tab' : ''}}">已完成</view>
         </view>
         
 
@@ -60,7 +60,7 @@
           <view wx:if="{{!showDoneList}}">
 
             <block wx:if="{{getUndoneList.getLength(todoList) > 0}}">
-              <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" bindtap="navigateToDetail">
+              <view wx:for="{{getUndoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" catchtap="navigateToDetail" data-todo="{{item.todo}}" data-remark="{{item.remark}}" data-done="0">
                 <text>{{item.todo}}</text>
               </view>
               
@@ -83,7 +83,7 @@
           <view wx:else>
 
             <block wx:if="{{getDoneList.getLength(todoList) > 0}}">
-              <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30">
+              <view wx:for="{{getDoneList.getList(todoList)}}" wx:key="key" class="todo-item mb30" data-todo="{{item.todo}}" data-remark="{{item.remark}}" data-done="1" catchtap="navigateToDetail">
                 <text>{{item.todo}}</text>
               </view>
 
@@ -115,7 +115,7 @@
       </block>
 
       <block wx:else>
-        <button class="light-blue-bg white full-button" hover-class="light-blue-hover" bindtap="goAddPage"> 添加待办事项 </button>
+        <button class="light-blue-bg white full-button" hover-class="light-blue-hover" catchtap="goAddPage"> 添加待办事项 </button>
       </block>
     </view>
   </block>

@@ -10,36 +10,12 @@ Page({
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 		initLoading: true,
 		showDoneList: false,
-		todoList: [{
-			key: 'key_0',
-			todo: '一二三四一二三四一二三四十二个字然后呢居然直接换行了',
-			isDone: false,
-			remark: '展示未完成'
-		}, {
-			key: 'key_1',
-			todo: 'mock_1未完成',
-			isDone: false,
-			remark: '展示未完成'
-		},{
-			key: 'key_1',
-			todo: 'mock_1未完成',
-			isDone: false,
-			remark: '展示未完成'
-		},{
-			key: 'key_1',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		},{
-			key: 'key_1',
-			todo: 'mock_1未完成',
-			isDone: true,
-			remark: '展示未完成'
-		}]
+		todoList: []
 	},
 
 	onLoad: function() {
 		this.initUserInfo();
+		this.getTodoList();
 	},
 
 	onShow: function() {
@@ -57,11 +33,18 @@ Page({
 
 	// 按钮事件 获取用户数据
 	getUserInfo: function(e) {
-		app.globalData.userInfo = e.detail.userInfo
+		app.globalData.userInfo = e.detail.userInfo;
 		this.setData({
 			userInfo: e.detail.userInfo,
 			hasUserInfo: true
-		})
+		});
+	},
+
+	getTodoList: function() {
+		let todoList = app.globalData.todoList;
+		this.setData({
+			todoList: todoList
+		});
 	},
 
 	// 关闭小程序loading动画
@@ -80,7 +63,7 @@ Page({
 			this.setData({
 				userInfo: app.globalData.userInfo,
 				hasUserInfo: true
-			})
+			});
 		} else if (this.data.canIUse) {
 			// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
 			// 所以此处加入 callback 以防止这种情况
@@ -88,7 +71,7 @@ Page({
 				this.setData({
 					userInfo: res.userInfo,
 					hasUserInfo: true
-				})
+				});
 			}
 		} else {
 			// 在没有 open-type=getUserInfo 版本的兼容处理
@@ -98,9 +81,9 @@ Page({
 					this.setData({
 						userInfo: res.userInfo,
 						hasUserInfo: true
-					})
+					});
 				}
-			})
+			});
 		}
 	},
 
@@ -114,18 +97,15 @@ Page({
 
 
 	// todo详情页
-	navigateToDetail: function() {
-		wx.showModal({
-			title: '友情提醒',
-			content: '事项的详情页面还没做呢，别点了',
-			showCancel: false,
-			confirmText: '哦!',
-			confirmColor: '#5cbaea',
-			success: res => {
-				if (res.confirm) {
-					return;
-				}
-			}
+	navigateToDetail: function(ev) {
+
+		let todo = ev.target.dataset.todo;
+		let remark = ev.target.dataset.remark;
+
+		let jumpUrl = '../itemDetail/itemDetail?todo=' + todo + '&remark=' + remark;
+
+		wx.navigateTo({
+			url: jumpUrl
 		});
 	},
 

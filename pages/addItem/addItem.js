@@ -68,7 +68,7 @@ Page({
 	},
 
 	checkIllegal: function(input) {
-		let patern = /[`#^<>:"{}\/;'[\]]/im;
+		let patern = /[`#^<>:"?{}\/;'[\]]/im;
 		let _result = patern.test(input);
 		return _result;
 	},

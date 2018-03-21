@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/addItem/addItem"
+    "pages/addItem/addItem",
+    "pages/itemDetail/itemDetail"
   ],
   "window":{
     "backgroundTextStyle":"dark",

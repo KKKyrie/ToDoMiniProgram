@@ -2,9 +2,9 @@
 App({
 	onLaunch: function() {
 		// 展示本地存储能力
-		var logs = wx.getStorageSync('logs') || []
-		logs.unshift(Date.now())
-		wx.setStorageSync('logs', logs)
+		var logs = wx.getStorageSync('logs') || [];
+		logs.unshift(Date.now());
+		wx.setStorageSync('logs', logs);
 
 		// 登录
 		wx.login({
@@ -20,20 +20,50 @@ App({
 					wx.getUserInfo({
 						success: res => {
 							// 可以将 res 发送给后台解码出 unionId
-							this.globalData.userInfo = res.userInfo
+							this.globalData.userInfo = res.userInfo;
 
 							// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
 							// 所以此处加入 callback 以防止这种情况
 							if (this.userInfoReadyCallback) {
-								this.userInfoReadyCallback(res)
+								this.userInfoReadyCallback(res);
 							}
 						}
 					})
 				}
 			}
-		})
+		});
 	},
+
+	// 全局获取 todoList 数据
+	getTodoList: function() {},
+
 	globalData: {
-		userInfo: null
+		userInfo: null,
+		todoList: [{
+			key: 'key_0',
+			todo: '妈个鸡',
+			isDone: false,
+			remark: '%……*……&%……%'
+		}, {
+			key: 'key_1',
+			todo: '我靠',
+			isDone: false,
+			remark: '（）（）（）（）'
+		}, {
+			key: 'key_1',
+			todo: '亲娘类',
+			isDone: false,
+			remark: '******'
+		}, {
+			key: 'key_1',
+			todo: '额滴神呀',
+			isDone: true,
+			remark: '!!!!!'
+		}, {
+			key: 'key_1',
+			todo: '我的妈呀',
+			isDone: true,
+			remark: '_____-----'
+		}]
 	}
 })
