@@ -3,11 +3,11 @@
 	
 	<view class="note">
 		<view class="note-todo">
-			<text>bchdsbcscndiuidajdknalcnsdcbnauewjfnjcnsdmnaclhuiedhu</text>
+			<text>{{todo}}</text>
 		</view>
 		<view class="divider"></view>
 		<scroll-view class="note-remark" scroll-y>
-			<text>劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里劉凯里</text>
+			<text>{{remark}}</text>
 		</scroll-view>
 		<view class="divider"></view>
 	</view>

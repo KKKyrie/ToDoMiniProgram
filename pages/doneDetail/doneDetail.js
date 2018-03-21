@@ -8,7 +8,6 @@ Page({
 	onLoad: function(options) {
 		let _todo = decodeURIComponent(options.todo);
 		let _remark = decodeURIComponent(options.remark);
-		console.log(_todo);
 		this.getItemInfo(_todo, _remark);
 	},
 

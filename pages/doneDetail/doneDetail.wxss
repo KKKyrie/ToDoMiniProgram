@@ -5,10 +5,49 @@
 .delete-button {
 	background-color: transparent;
 	color: #5cbaea;
-	border: 1px solid #5cbaea;
+	border: 1rpx solid #5cbaea;
 }
 
 .delete-button-hover {
 	color: #5cacea;
-	border: 1px solid #5cacea;
+	border: 1rpx solid #5cacea;
+}
+
+.note-container {
+	border: 1px solid transparent;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 180rpx;
+}
+
+.note {
+	width: 80%;
+	border: 1px solid #cdcdcd;
+	border-radius: 20rpx;
+	box-shadow: 0 0 10rpx #cdcdcd;
+	background-color: #ffffff;
+	padding-bottom: 30rpx;
+}
+
+.note-todo {
+	display: block;
+	padding: 30rpx;
+
+	font-size: 55rpx;
+	font-weight: bold;
+}
+
+.note-remark {
+	display: block;
+	height: 350rpx;
+	padding: 20rpx;
+	/*padding-bottom: 5rpx;*/
+	/*font-size: 35rpx;*/
+}
+
+.divider {
+	border: 1rpx solid #cdcdcd;
+	height: 0;
+	margin: 0 auto;
 }
