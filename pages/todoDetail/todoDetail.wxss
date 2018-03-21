@@ -5,7 +5,7 @@
 .delete-button {
 	background-color: transparent;
 	color: #5cbaea;
-	border: 1rpx solid #5cbaea;
+	border: 2rpx solid #5cbaea;
 }
 
 .delete-button-hover {
