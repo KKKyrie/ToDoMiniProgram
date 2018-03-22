@@ -34,13 +34,14 @@ Page({
 		let stamp = this.data.stamp;
 		let targetIndex = -1;
 		for (let [_index, _todo] of todoList.entries()) {
-			if (_todo.timeStamp === stamp) {
+			if (_todo.timeStamp == stamp) {
 				targetIndex = _index;
 				break;
 			}
 		}
 
 		if (targetIndex === -1) {
+			console.log('404 Not Find');
 			return;
 		} else {
 			// delete todo

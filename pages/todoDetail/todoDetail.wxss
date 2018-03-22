@@ -27,7 +27,7 @@
 	border-radius: 20rpx;
 	box-shadow: 0 0 10rpx #cdcdcd;
 	background-color: #ffffff;
-	padding-bottom: 30rpx;
+	/*padding-bottom: 30rpx;*/
 }
 
 .note-todo {
@@ -39,12 +39,17 @@
 }
 
 .note-remark {
+	box-sizing: border-box;
 	display: block;
 	height: 350rpx;
 	padding: 20rpx;
-	padding-right: 30rpx;
+	/*padding-right: 50rpx;*/
 	/*padding-bottom: 5rpx;*/
 	/*font-size: 35rpx;*/
+}
+
+.note-remark > text {
+	text-align: justify;
 }
 
 .divider {

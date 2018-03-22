@@ -4,11 +4,14 @@
 		<view class="note-todo">
 			<text>{{todo}}</text>
 		</view>
-		<view class="divider"></view>
-		<scroll-view class="note-remark" scroll-y>
-			<text>{{remark}}</text>
-		</scroll-view>
-		<view class="divider"></view>
+
+		<block wx:if="{{remark !== ''}}">
+			<view class="divider"></view>
+			<scroll-view class="note-remark" scroll-y>
+				<text>{{remark}}</text>
+			</scroll-view>
+			<view class="divider"></view>
+		</block>
 	</view>
 	
 

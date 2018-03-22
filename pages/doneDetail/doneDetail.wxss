@@ -39,12 +39,16 @@
 }
 
 .note-remark {
+	box-sizing: border-box;
 	display: block;
 	height: 350rpx;
 	padding: 20rpx;
-	padding-right: 30rpx;
 	/*padding-bottom: 5rpx;*/
 	/*font-size: 35rpx;*/
+}
+
+.note-remark {
+	text-align: justify;
 }
 
 .divider {
