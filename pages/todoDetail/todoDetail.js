@@ -45,6 +45,7 @@ Page({
 	},
 
 	completeTap: function() {
+		let that = this;
 		wx.showModal({
 			title: 'lie to me',
 			content: '真的完成了吗？',
@@ -56,6 +57,7 @@ Page({
 			success: function(res) {
 				if (res.confirm) {
 					// 标记已完成
+					that.completeTodo();
 				} else if (res.cancel) {
 					// 取消
 				}
@@ -113,7 +115,42 @@ Page({
 
 
 	// 将 todo 标记为已完成
-	completeTodo: function() {}
+	completeTodo: function() {
+		let todoList = app.globalData.todoList;
+		let stamp = this.data.stamp;
+		for (let _todo of todoList) {
+			if (_todo.timeStamp === stamp) {
+				_todo.isDone = true;
+				break;
+			}
+		}
+
+		// 写入 localStorage
+		wx.setStorage({
+			key: 'userTodoList',
+			data: JSON.stringify(todoList),
+			success: function(){
+				// 状态修改成功
+				app.globalData.todoList = todoList;
+				wx.reLaunch({
+					url: '../index/index',
+					success: function() {},
+					fail: function() {
+						wx.navigateBack({
+							delta: 1
+						});
+					}
+				});
+			},
+			fail: function(){
+				// 状态修改失败
+				wx.showToast({
+					title: '删除失败',
+					duration: 1500
+				});
+			}
+		});
+	}
 
 
 });
