@@ -15,19 +15,19 @@ var getUndoneWording = function(arr) {
 	var _wording = '';
 	switch (_length) {
 		case 1:
-			_wording = '一个';
+			_wording = 'Just do it';
 			break;
 		case 2:
-			_wording = '两个';
+			_wording = '小步快跑,了解一下';
 			break;
 		case 3:
-			_wording = '三个';
+			_wording = 'Promise is debt';
 			break;
 		case 4:
-			_wording = '四个';
+			_wording = '生的伟大,死于拖延';
 			break;
 		case 5:
-			_wording = '五个';
+			_wording = '拖延症会死人的';
 			break;
 		default:
 			_wording = '？？？';
