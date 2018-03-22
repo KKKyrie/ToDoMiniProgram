@@ -111,8 +111,9 @@ Page({
 
 		let todo = encodeURIComponent(ev.target.dataset.todo);
 		let remark = encodeURIComponent(ev.target.dataset.remark);
+		let stamp = encodeURIComponent(ev.target.dataset.stamp);
 
-		let jumpUrl = '../todoDetail/todoDetail?todo=' + todo + '&remark=' + remark;
+		let jumpUrl = '../todoDetail/todoDetail?todo=' + todo + '&remark=' + remark + '&stamp=' + stamp;
 
 		wx.navigateTo({
 			url: jumpUrl
@@ -124,8 +125,9 @@ Page({
 
 		let todo = encodeURIComponent(ev.target.dataset.todo);
 		let remark = encodeURIComponent(ev.target.dataset.remark);
+		let stamp = encodeURIComponent(ev.target.dataset.stamp);
 
-		let jumpUrl = '../doneDetail/doneDetail?todo=' + todo + '&remark=' + remark;
+		let jumpUrl = '../doneDetail/doneDetail?todo=' + todo + '&remark=' + remark + '&stamp=' + stamp;
 
 		wx.navigateTo({
 			url: jumpUrl

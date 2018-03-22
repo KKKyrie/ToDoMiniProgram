@@ -89,16 +89,14 @@ Page({
 		let todo = that.data.todo;
 		let remark = that.data.remark;
 		let timeStamp = Date.now();
-
 		let todoList = app.globalData.todoList;
-		let todoListLength = todoList.length;
 
 		let item = {
-			key: 'key_' + todoListLength.toString(),
+			key: 'key_' + timeStamp.toString(),
 			todo: todo,
 			isDone: false,
 			remark: remark,
-			timeStamp: timeStamp
+			timeStamp: timeStamp.toString()
 		};
 
 		let newList = [...todoList, item];
@@ -123,7 +121,7 @@ Page({
 				// 添加失败
 				wx.showToast({
 					title: '添加失败',
-					duration: 2000
+					duration: 1500
 				});
 			}
 		});
