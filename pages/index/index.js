@@ -101,7 +101,11 @@ Page({
 	// 去添加页面
 	goAddPage: function() {
 		let todoList = this.data.todoList;
-		if (todoList.length > 4) {
+		let undoneList = todoList.filter(function(item){
+			return !item.isDone;
+		});
+		let length = undoneList.length;
+		if (length > 4) {
 			wx.showModal({
 				title: '提示',
 				content: '你已经有5个待办事项了，先做完这些吧  : )',
