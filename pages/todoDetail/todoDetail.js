@@ -118,7 +118,7 @@ Page({
 		let todoList = app.globalData.todoList;
 		let stamp = this.data.stamp;
 		for (let _todo of todoList) {
-			if (_todo.timeStamp === stamp) {
+			if (_todo.timeStamp == stamp) {
 				_todo.isDone = true;
 				break;
 			}
