@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
 
 Page({
 	data: {
@@ -25,10 +25,11 @@ Page({
 	// 下拉刷新
 	onPullDownRefresh: function() {
 		// 重新获取页面数据
-		setTimeout(() => {
+		let that = this;
+		setTimeout(function() {
+			that.getTodoListFromStorage();
 			wx.stopPullDownRefresh();
-		}, 1500);
-
+		}, 1000);
 	},
 
 	// 按钮事件 获取用户数据
@@ -42,6 +43,15 @@ Page({
 
 	getTodoList: function() {
 		let todoList = app.globalData.todoList;
+		this.setData({
+			todoList: todoList
+		});
+	},
+
+	getTodoListFromStorage: function(){
+		let storage = wx.getStorageSync('userTodoList');
+		let todoList = storage ? JSON.parse(storage) : [];
+		app.globalData.todoList = todoList;
 		this.setData({
 			todoList: todoList
 		});

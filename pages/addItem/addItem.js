@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
 	data: {
 		todo: '',
@@ -83,6 +85,48 @@ Page({
 		if (!that.checkInput()) {
 			return;
 		}
-		console.log(':)))))');
+
+		let todo = that.data.todo;
+		let remark = that.data.remark;
+		let timeStamp = Date.now();
+
+		let todoList = app.globalData.todoList;
+		let todoListLength = todoList.length;
+
+		let item = {
+			key: 'key_' + todoListLength.toString(),
+			todo: todo,
+			isDone: false,
+			remark: remark,
+			timeStamp: timeStamp
+		};
+
+		let newList = [...todoList, item];
+
+		wx.setStorage({
+			key: 'userTodoList',
+			data: JSON.stringify(newList),
+			success: function() {
+				// 添加成功
+				app.globalData.todoList = newList;
+				wx.reLaunch({
+					url: '../index/index',
+					success: function() {},
+					fail: function() {
+						wx.navigateBack({
+							delta: 1
+						});
+					}
+				});
+			},
+			fail: function() {
+				// 添加失败
+				wx.showToast({
+					title: '添加失败',
+					duration: 2000
+				});
+			}
+		});
+
 	}
 });

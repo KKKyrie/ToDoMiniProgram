@@ -6,6 +6,8 @@ App({
 		logs.unshift(Date.now());
 		wx.setStorageSync('logs', logs);
 
+		this.getTodoList();
+
 		// 登录
 		wx.login({
 			success: res => {
@@ -35,40 +37,14 @@ App({
 	},
 
 	// 全局获取 todoList 数据
-	getTodoList: function() {},
+	getTodoList: function() {
+		var storage = wx.getStorageSync('userTodoList');
+		var list = storage ? JSON.parse(storage) : [];
+		this.globalData.todoList = list;
+	},
 
 	globalData: {
 		userInfo: null,
-		todoList: [{
-			key: 'key_0',
-			todo: '妈个鸡',
-			isDone: false,
-			remark: '%……*……&%……%'
-		}, {
-			key: 'key_1',
-			todo: '我靠',
-			isDone: false,
-			remark: '（）（）（）（）'
-		}, {
-			key: 'key_1',
-			todo: '亲娘类',
-			isDone: false,
-			remark: '******'
-		}, {
-			key: 'key_1',
-			todo: '额滴神呀额滴神呀额滴神呀额滴神呀额滴神呀',
-			isDone: true,
-			remark: '!!!!!'
-		}, {
-			key: 'key_3',
-			todo: 'zzzzzzzzzzzzzllllllllll??????????????????????????!!!!!!!!!!!!!!!!!!!!!?????????????????lllllliiiiiiiiiiiwwwwwwwwwgggewwwwrrwqdsdfewfwfsdfsad',
-			isDone: true,
-			remark: '!!!!!'
-		}, {
-			key: 'key_1',
-			todo: '我的妈呀',
-			isDone: true,
-			remark: '_____-----'
-		}]
+		todoList: []
 	}
 })
