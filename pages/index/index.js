@@ -48,7 +48,7 @@ Page({
 		});
 	},
 
-	getTodoListFromStorage: function(){
+	getTodoListFromStorage: function() {
 		let storage = wx.getStorageSync('userTodoList');
 		let todoList = storage ? JSON.parse(storage) : [];
 		app.globalData.todoList = todoList;
@@ -100,6 +100,18 @@ Page({
 
 	// 去添加页面
 	goAddPage: function() {
+		let todoList = this.data.todoList;
+		if (todoList.length > 4) {
+			wx.showModal({
+				title: '提示',
+				content: '你已经有5个待办事项了，无法继续添加，先做完这些吧  : )',
+				showCancel: false,
+				confirmText: '好嘞',
+				confirmColor: '#5cbaea'
+			})
+			return;
+		}
+
 		wx.navigateTo({
 			url: '../addItem/addItem'
 		});
