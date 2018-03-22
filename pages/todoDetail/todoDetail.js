@@ -69,7 +69,6 @@ Page({
 	deleteTodo: function() {
 		let todoList = app.globalData.todoList;
 		let stamp = this.data.stamp;
-		console.log(stamp);
 		let targetIndex = -1;
 		for (let [_index, _todo] of todoList.entries()) {
 			if (_todo.timeStamp === stamp) {
@@ -89,7 +88,7 @@ Page({
 		wx.setStorage({
 			key: 'userTodoList',
 			data: JSON.stringify(todoList),
-			success: function(){
+			success: function() {
 				// 删除成功
 				app.globalData.todoList = todoList;
 				wx.reLaunch({
@@ -102,7 +101,7 @@ Page({
 					}
 				});
 			},
-			fail: function(){
+			fail: function() {
 				// 删除失败
 				wx.showToast({
 					title: '删除失败',
@@ -129,7 +128,7 @@ Page({
 		wx.setStorage({
 			key: 'userTodoList',
 			data: JSON.stringify(todoList),
-			success: function(){
+			success: function() {
 				// 状态修改成功
 				app.globalData.todoList = todoList;
 				wx.reLaunch({
@@ -142,7 +141,7 @@ Page({
 					}
 				});
 			},
-			fail: function(){
+			fail: function() {
 				// 状态修改失败
 				wx.showToast({
 					title: '删除失败',
