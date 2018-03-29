@@ -108,7 +108,7 @@ Page({
 		if (length > 4) {
 			wx.showModal({
 				title: '提示',
-				content: '你已经有5个待办事项了，先做完这些吧  : )',
+				content: '先做完这5个吧  : )',
 				showCancel: false,
 				confirmText: '好嘞',
 				confirmColor: '#5cbaea'
