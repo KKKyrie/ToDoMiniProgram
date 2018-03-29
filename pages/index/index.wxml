@@ -19,7 +19,7 @@
     <!-- no user info -->
     <view wx:if="{{!hasUserInfo && canIUse}}" class="todo-container mt200">    
       <view class="auth-banner">
-        <text>为了更好的使用「事情做完了吗」，需要你授权小程序以下个人信息：</text>
+        <text>为了更好的使用「小待办Todo」，需要你授权小程序以下个人信息：</text>
         <text class="mt20">⒈ 微信昵称</text>
         <text class="mt10">⒉ 微信头像</text>
       </view>
