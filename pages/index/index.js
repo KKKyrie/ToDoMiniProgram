@@ -125,9 +125,10 @@ Page({
 	// todo详情页
 	navigateToDetail: function(ev) {
 
-		let todo = encodeURIComponent(ev.target.dataset.todo);
-		let remark = encodeURIComponent(ev.target.dataset.remark);
-		let stamp = encodeURIComponent(ev.target.dataset.stamp);
+		let dataset = ev.currentTarget.dataset;
+		let todo = encodeURIComponent(dataset.todo);
+		let remark = encodeURIComponent(dataset.remark);
+		let stamp = encodeURIComponent(dataset.stamp);
 
 		let jumpUrl = '../todoDetail/todoDetail?todo=' + todo + '&remark=' + remark + '&stamp=' + stamp;
 
@@ -139,9 +140,10 @@ Page({
 	// 已完成 todo详情页
 	navigateToDoneDetail: function(ev) {
 
-		let todo = encodeURIComponent(ev.target.dataset.todo);
-		let remark = encodeURIComponent(ev.target.dataset.remark);
-		let stamp = encodeURIComponent(ev.target.dataset.stamp);
+		let dataset = ev.currentTarget.dataset;
+		let todo = encodeURIComponent(dataset.todo);
+		let remark = encodeURIComponent(dataset.remark);
+		let stamp = encodeURIComponent(dataset.stamp);
 
 		let jumpUrl = '../doneDetail/doneDetail?todo=' + todo + '&remark=' + remark + '&stamp=' + stamp;
 
